@@ -1,0 +1,167 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "name": "Customer001",
+      "email": "customer001@email.com",
+      "tel": "0526252525"
+    },
+    {
+      "id": 2,
+      "name": "Customer002",
+      "email": "customer002@email.com",
+      "tel": "0527252525"
+    },
+    {
+      "id": 3,
+      "name": "Customer003",
+      "email": "customer003@email.com",
+      "tel": "0528252525"
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "first_name": "gfghf",
+      "last_name": "gfhfgfgh"
+    },
+    {
+      "id": 2,
+      "first_name": "Florent",
+      "last_name": "Fardel",
+      "token": "simple"
+    },
+    {
+      "id": 3,
+      "first_name": "Saïd",
+      "last_name": "Argoug",
+      "token": "simple"
+    },
+    {
+      "first_name": "fff",
+      "last_name": "rrrr",
+      "id": 4
+    },
+    {
+      "first_name": "gfghf",
+      "last_name": "gfhfgfgh",
+      "id": 6
+    },
+    {
+      "first_name": "CGE",
+      "last_name": "JEAN",
+      "id": 8
+    },
+    {
+      "first_name": "CGE",
+      "last_name": "JEAN",
+      "id": 9
+    },
+    {
+      "first_name": "CGE",
+      "last_name": "JEAN",
+      "id": 10
+    },
+    {
+      "first_name": "CGE",
+      "last_name": "JEAN",
+      "id": 11
+    },
+    {
+      "first_name": "CGE",
+      "last_name": "JEAN",
+      "id": 12
+    },
+    {
+      "first_name": "CGE",
+      "last_name": "JEAN",
+      "id": 13
+    }
+  ],
+  "Hero": [
+    {
+      "id": 1,
+      "name": "Whirlwind",
+      "addresses": [
+        {
+          "street": "123 Main",
+          "city": "Anywhere",
+          "state": "CA",
+          "zip": "94801"
+        },
+        {
+          "street": "456 Maple",
+          "city": "Somewhere",
+          "state": "VA",
+          "zip": "23226"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Bombastic",
+      "addresses": [
+        {
+          "street": "789 Elm",
+          "city": "Smallville",
+          "state": "OH",
+          "zip": "04501"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Magneta",
+      "addresses": []
+    }
+  ],
+  "login": [
+    {
+      "id": 1,
+      "userName": "cgelogin",
+      "userMDP": "1234",
+      "isAnonymous": false
+    },
+    {
+      "id": 2,
+      "userName": "M2iLogin",
+      "userMDP": "00014",
+      "isAnonymous": false
+    },
+    {
+      "id": 3,
+      "userName": "vlb",
+      "userMDP": "1234",
+      "isAnonymous": false
+    },
+    {
+      "id": 4,
+      "userName": "super",
+      "userMDP": "1234",
+      "isAnonymous": false
+    }
+  ],
+  "stagiaires" : [
+   {
+    "id" : 1,
+	"lastname" : "Martin",
+	"firstname" : "Paul"
+   },
+   {
+    "id" : 2,
+	"lastname" : "Martin",
+	"firstname" : "Paul"
+   },
+   {
+    "id" : 3,
+	"lastname" : "Martin 33",
+	"firstname" : "Paul 33"
+   },
+   
+   {
+    "id" : 4,
+	"lastname" : "Martin 35555",
+	"firstname" : "Jean 33"
+   }
+  ]
+}

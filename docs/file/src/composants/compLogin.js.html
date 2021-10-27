@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/composants/compLogin.js | tproutelocalstorage</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-App">App</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-register">register</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-unregister">unregister</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#classes">classes</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/classes/contact.js~Contact.html">Contact</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/classes/login.js~Login.html">Login</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#composants">composants</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/composants/Home.js~Home.html">Home</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/composants/compLogin.js~CompLogin.html">CompLogin</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#config">config</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Config">Config</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#routes">routes</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AfficheLesLiens">AfficheLesLiens</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-GestionCustomers">GestionCustomers</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-GestionLogin">GestionLogin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-GestionSousRoutes">GestionSousRoutes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Listes">Listes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-MapRoute">MapRoute</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services">services</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/gestionslocalstorage.js~gestionlocalstorage.html">gestionlocalstorage</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/composants/compLogin.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import React, { Component } from &quot;react&quot;;
+import Login from &apos;../classes/login&apos;;
+import {Redirect} from &quot;react-router-dom&quot;;
+import axios from &apos;axios&apos;;
+
+import gestionlocalstorage from &quot;../services/gestionslocalstorage&quot;;
+import { Config } from &apos;../config/config&apos;;
+
+/**
+ * Composant de connexion : formulaire et gestion des states...
+ * R&#xE9;cup&#xE9;ration des props de mon router
+ */
+
+export default class CompLogin extends Component {
+
+    constructor(props) {
+      super(props);
+      /**
+       * State pour orient&#xE9; la rediction vers la route de l&apos;application
+       */
+      this.state = { redirectToReferrer: false};
+      this.loginInput = React.createRef();
+      this.mtpInput = React.createRef();
+    }
+    
+    /**
+     * Appeler lors du click pour v&#xE9;rifier si les informations
+     * du login est correct
+     */
+  /**
+   * login est appel&#xE9; lors du onclick du bouton connexion
+   * il r&#xE9;cup&#xE9;re le user et le MTP
+   * se connecte &#xE0; la base de donn&#xE9;es et v&#xE9;rifie si les deux informations existent
+   * si c&apos;est le cas alors on met &#xE0; jour notre localstorage
+   * sinon on est d&#xE9;connect&#xE9;
+   */
+    login = (e) =&gt; {
+      let c = new Login();
+      c.userMDP = this.mtpInput.current.value;
+      c.userName = this.loginInput.current.value;
+      /**
+       * on se d&#xE9;connecte pour une raison de s&#xE9;curit&#xE9; ...
+       */
+      gestionlocalstorage.logout();
+      
+      axios.get(Config.login).then((response)=&gt; {
+        let data = response.data;
+        data.forEach((item)=&gt;{
+            if( (c.userMDP === item.userMDP) &amp;&amp; (c.userName === item.userName)) {
+                gestionlocalstorage.setlogin(c);
+            }
+        });
+        /**
+         * Si on a une information alors on d&#xE9;clenche le redirect par redirectToReferrer: true
+         */
+        if(gestionlocalstorage.getlogin() != null) {
+            this.setState({redirectToReferrer: true})
+        }
+      });
+      
+    };
+/**
+ * D&#xE9;connexion de l&apos;application
+ */
+    logout = (e) =&gt; {
+      gestionlocalstorage.logout();
+      this.setState({redirectToReferrer: false});
+    }
+      render() {
+
+      /**
+       * from est un attribut JSON de location.state
+       * (state du router)
+       * si le state est undefined alors { from: { pathname: &quot;/&quot; }
+       */
+      let { from } = this.props.location.state || { from: { pathname: &quot;/&quot; } };
+      /**
+       * R&#xE9;cup&#xE9;ration de l&apos;attribut redirectToReferrer du state du composant
+       */
+      let { redirectToReferrer } = this.state;
+
+      //R&#xE9;cup&#xE9;ration du state redirectToReferrer
+      if (redirectToReferrer) {
+        //Si redirectToReferrer est &#xE0; true on est redirig&#xE9; vers /app
+        //avec le state mise &#xE0; jour
+          if(from.pathname !== &apos;/&apos;) {
+              from.state = { login:gestionlocalstorage.getlogin() };
+          }
+          //Je redirige vers from.pathname configur&#xE9;
+          return  &lt;Redirect to={from} /&gt;;
+      }
+  /**
+   * Ecran de saisie avec des ref&#xE9;rences ref
+   */
+      return (
+        &lt;div&gt;
+          {gestionlocalstorage.getlogin() === null &amp;&amp;
+          &lt;div&gt;
+              &lt;label&gt;Login :&lt;input type=&apos;text&apos; ref={this.loginInput} /&gt;&lt;/label&gt;&lt;br/&gt;
+              &lt;label&gt;Mot de passe :&lt;input type=&apos;password&apos; ref={this.mtpInput} /&gt;&lt;/label&gt;
+              &lt;button onClick={this.login}&gt;Connexion...&lt;/button&gt;
+            &lt;/div&gt;
+          }
+          {/* Bouton d&#xE9;connexion si login ok*/}
+          {gestionlocalstorage.getlogin() !== null &amp;&amp;
+            &lt;button onClick={this.logout}&gt;Logout...&lt;/button&gt;
+          }
+          
+        &lt;/div&gt;
+      );
+    }
+  }</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

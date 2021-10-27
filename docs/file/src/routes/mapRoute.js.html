@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/routes/mapRoute.js | tproutelocalstorage</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-App">App</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-register">register</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-unregister">unregister</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#classes">classes</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/classes/contact.js~Contact.html">Contact</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/classes/login.js~Login.html">Login</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#composants">composants</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/composants/Home.js~Home.html">Home</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/composants/compLogin.js~CompLogin.html">CompLogin</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#config">config</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Config">Config</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#routes">routes</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AfficheLesLiens">AfficheLesLiens</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-GestionCustomers">GestionCustomers</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-GestionLogin">GestionLogin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-GestionSousRoutes">GestionSousRoutes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Listes">Listes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-MapRoute">MapRoute</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services">services</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/gestionslocalstorage.js~gestionlocalstorage.html">gestionlocalstorage</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/routes/mapRoute.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import React from &quot;react&quot;;
+import { Route, NavLink,Switch } from &quot;react-router-dom&quot;;
+import Home from &apos;../composants/Home&apos;;
+import CompLogin from &apos;../composants/compLogin&apos;;
+import gestionlocalstorage from &quot;../services/gestionslocalstorage&quot;;
+
+/**
+TP Route + LocalStorage + Axios
+Objectif : Garder la connexion d&apos;un utilisateur : sur la table Login : lorsqu&apos;on fait F5 ou qu&apos;on quitte le naviagateur
+Recharger : Les informations li&#xE9;es &#xE0; notre utilisateur dans tous les cas.
+Charger le Routes suivant.
+Pr&#xE9;voir une m&#xE9;thode logout() au niveau des composants Home et Login ou de pr&#xE9;voir un composant Header
+*/
+
+/**
+ * Simulation de la gestion des login....
+ */
+export function GestionLogin() {
+    return &lt;div&gt;Gestion des login&lt;/div&gt;
+}
+
+/**
+ * Simulation de la gestion des Clients....
+ */
+export function GestionCustomers() {
+    return &lt;div&gt;Gestion des Clients&lt;/div&gt;
+}
+
+/**
+ * on r&#xE9;cup&#xE9;re les routes (const route en cours...) et les props des routes
+ * @param {*} param0 
+ */
+export function Listes( { routes,...props}) {
+    /**
+     * On v&#xE9;rifie si on est &quot;logu&#xE9;&quot; sinon on est redirig&#xE9; vers le path : &apos;/login&apos;
+     */
+    if(gestionlocalstorage.getlogin() == null)
+        {
+            props.history.push(&apos;/login&apos;);
+        }
+    return (
+    &lt;div&gt;
+        &lt;ul&gt;
+        {/*On affiche tous les liens du route en cours */}
+        {routes.map((route, i) =&gt; (
+            &lt;AfficheLesLiens key={i} {...route} /&gt;
+        ))}
+        &lt;/ul&gt;
+        {/** on cr&#xE9;e la balise route avec le composant et les passages de param&#xE8;tres dont les props */}
+        {routes.map((route, i) =&gt; (
+            &lt;GestionSousRoutes key={i} {...route} /&gt;
+        ))}
+    &lt;/div&gt;);
+}
+/**
+ * JSON de ma gestion des routes
+ * J&apos;ai ajout&#xE9; de fa&#xE7;on personnelle menu et exact
+ */
+const routes = [
+ {
+   path: &quot;/&quot;,
+   menu: &apos;Accueil&apos;,
+   component: Home,
+   exact : true
+ },
+ {
+   path: &quot;/login&quot;,
+   menu: &apos;Identification&apos;,
+   component: CompLogin
+},
+{
+   path: &quot;/listes&quot;,
+   menu: &apos;Listes&apos;,
+   component: Listes,
+   routes: [
+     {
+       path: &quot;/listes/gestionlogin&quot;,
+       menu: &apos;Gestion des users&apos;,
+       component: GestionLogin
+     },
+     {
+       path: &quot;/listes/gestionclient&quot;,
+       menu: &apos;Gestion des Cliens&apos;,
+       component: GestionCustomers
+     }
+   ]
+ }
+];
+
+//Affiche les Link de la routes
+
+export function AfficheLesLiens(route) {
+    return (
+    &lt;li&gt;
+        {/*On affiche tous les liens du route en cours par NavLink */}
+        {route.exact === undefined &amp;&amp;
+        &lt;NavLink to={route.path}&gt; {route.menu} &lt;/NavLink&gt;
+        }
+        {/*Je positionne mon lien actif par d&#xE9;faut configurer dans le const route*/}
+        {route.exact === true  &amp;&amp;
+        &lt;NavLink to={route.path} activeClassName=&quot;selected&quot;&gt; {route.menu} &lt;/NavLink&gt;
+        }
+    &lt;/li&gt;
+    );
+  }
+
+/**
+ * Gestion des sous routes 
+ * @param {*} route 
+ */
+export function GestionSousRoutes(route) {
+    return (
+      &lt;Route
+        path={route.path}
+        render={props =&gt; (
+          &lt;route.component {...props} routes={route.routes} /&gt;
+        )}
+      /&gt;
+    );
+  }
+  
+  /**
+   * Gestion principale de mes routes &#xE0; partir de const route
+   */
+  export default function MapRoute() {
+    return (
+        &lt;div&gt;
+            &lt;ul&gt;
+            {routes.map((route, i) =&gt; (
+            &lt;AfficheLesLiens key={i} {...route} /&gt;
+          ))}
+          &lt;/ul&gt;
+          {/* Gestion de mes routes s&#xE9;lectionn&#xE9;s gr&#xE2;ce &#xE0; la balise Switch  */}
+          &lt;Switch&gt;
+          {routes.map((route, i) =&gt; (
+            &lt;GestionSousRoutes key={i} {...route} /&gt;
+          ))}
+          &lt;/Switch&gt;
+        &lt;/div&gt;
+    );
+  }</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
