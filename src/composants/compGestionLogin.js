@@ -7,7 +7,8 @@ class compGestionLogin extends Component {
     
     state = {
         liste : [],
-        searchedLogin : undefined
+        searchedLogin : undefined,
+        isLoginFound : false
     }
 
     constructor(props) {
@@ -30,8 +31,8 @@ class compGestionLogin extends Component {
         );
     }
 
-    searchOne = () => {
-        this.setState({searchedLogin : undefined});
+    searchOneLogin = () => {
+        this.setState({searchedLogin : undefined, isLoginFound : false});
         let login = new Login();
         login.id = this.idLoginInput.current.value;
         this.idLoginInput.current.value = "";
@@ -39,6 +40,7 @@ class compGestionLogin extends Component {
             login, 
             (data) => {
                 this.setState({searchedLogin : data});
+                if(!(data instanceof Array)) this.setState({isLoginFound : true});
             },
             (error) => console.log(error)
         );
@@ -63,10 +65,13 @@ class compGestionLogin extends Component {
                 <hr/>
                 <h3>Faire une recherche par id</h3>
                 <input type="text" required="required" ref={this.idLoginInput}/>
-                <button onClick={this.searchOne}>Rechercher</button><br/>
+                <button onClick={this.searchOneLogin}>Rechercher</button><br/>
                 {
-                    this.state.searchedLogin  &&
-                    <h4>{this.state.searchedLogin.userName} {this.state.searchedLogin.userMDP}</h4>
+                    this.state.isLoginFound &&
+                    <div>
+                        Login : <strong>{this.state.searchedLogin.userName}</strong><br/>
+                        Password : <strong>{this.state.searchedLogin.userMDP}</strong>
+                    </div>
                 }
             </div>
         );
