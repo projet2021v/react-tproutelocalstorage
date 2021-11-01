@@ -46,12 +46,6 @@ class CompFormContact extends Component {
     onSubmit = (e) => {
         e.preventDefault();
         
-        // if(!this.state.isUpdatingForm) {
-        //     this.service.add(this.state.contact).then(() => this.props.listAllContacts());
-        // } else {
-        //     this.service.update(this.state.contact).then(() => this.props.listAllContacts());
-        // }
-
         !this.state.isUpdatingForm
         ? this.service.add(this.state.contact).then(() => this.props.listAllContacts())
         : this.service.update(this.state.contact).then(() => this.props.listAllContacts())
