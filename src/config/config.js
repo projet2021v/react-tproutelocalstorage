@@ -4,6 +4,7 @@
 export const Config = 
     {
         login : "http://localhost:3000/login",
-        customer : "http://localhost:3000/customers"
+        customer : "http://localhost:3000/customers",
+        contacts : "http://localhost:3000/contacts"
     }
 ;

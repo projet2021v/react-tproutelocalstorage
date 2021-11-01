@@ -4,6 +4,7 @@ import Home from '../composants/Home';
 import CompLogin from '../composants/compLogin';
 import gestionlocalstorage from "../services/gestionslocalstorage";
 import compGestionLogin from "../composants/compGestionLogin";
+import CompGestionContact from "../composants/compGestionContact";
 
 /**
 TP Route + LocalStorage + Axios
@@ -26,14 +27,19 @@ const routes = [
     exact : true
   },
   {
+    path: "/login",
+    menu: 'Identification',
+    component: CompLogin
+  },
+  {
     path: "/CrudLogin",
     menu: "Mon CRUD login",
     component: compGestionLogin
   },
   {
-    path: "/login",
-    menu: 'Identification',
-    component: CompLogin
+    path: "/contacts",
+    menu: "Gestion des contacts",
+    component: CompGestionContact
   },
   {
     path: "/listes",

@@ -19,6 +19,7 @@
       "tel": "0528252525"
     }
   ],
+
   "user": [
     {
       "id": 1,
@@ -78,6 +79,7 @@
       "id": 13
     }
   ],
+
   "Hero": [
     {
       "id": 1,
@@ -115,6 +117,30 @@
       "addresses": []
     }
   ],
+
+  "stagiaires" : [
+    {
+      "id" : 1,
+      "lastname" : "Martin",
+      "firstname" : "Paul"
+    },
+    {
+      "id" : 2,
+      "lastname" : "Martin",
+      "firstname" : "Paul"
+    },
+    {
+      "id" : 3,
+      "lastname" : "Martin 33",
+      "firstname" : "Paul 33"
+    },
+    {
+      "id" : 4,
+      "lastname" : "Martin 35555",
+      "firstname" : "Jean 33"
+    }
+  ],
+
   "login": [
     {
       "id": 1,
@@ -141,27 +167,16 @@
       "isAnonymous": false
     }
   ],
-  "stagiaires" : [
-   {
-    "id" : 1,
-	"lastname" : "Martin",
-	"firstname" : "Paul"
-   },
-   {
-    "id" : 2,
-	"lastname" : "Martin",
-	"firstname" : "Paul"
-   },
-   {
-    "id" : 3,
-	"lastname" : "Martin 33",
-	"firstname" : "Paul 33"
-   },
-   
-   {
-    "id" : 4,
-	"lastname" : "Martin 35555",
-	"firstname" : "Jean 33"
-   }
+
+  "contacts" : [
+    {
+      "IdContact" : 1,
+      "LastNameContact" : "LB",
+      "FirstNameContact" : "Ben",
+      "AddressContact" : "Adresse de Ben",
+      "CityContact" : "Rennes",
+      "ZIPContact" : "35000",
+      "FollowedContact" : false
+    }
   ]
 }

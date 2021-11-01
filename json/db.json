@@ -115,6 +115,28 @@
       "addresses": []
     }
   ],
+  "stagiaires": [
+    {
+      "id": 1,
+      "lastname": "Martin",
+      "firstname": "Paul"
+    },
+    {
+      "id": 2,
+      "lastname": "Martin",
+      "firstname": "Paul"
+    },
+    {
+      "id": 3,
+      "lastname": "Martin 33",
+      "firstname": "Paul 33"
+    },
+    {
+      "id": 4,
+      "lastname": "Martin 35555",
+      "firstname": "Jean 33"
+    }
+  ],
   "login": [
     {
       "id": 1,
@@ -141,27 +163,33 @@
       "isAnonymous": false
     }
   ],
-  "stagiaires" : [
-   {
-    "id" : 1,
-	"lastname" : "Martin",
-	"firstname" : "Paul"
-   },
-   {
-    "id" : 2,
-	"lastname" : "Martin",
-	"firstname" : "Paul"
-   },
-   {
-    "id" : 3,
-	"lastname" : "Martin 33",
-	"firstname" : "Paul 33"
-   },
-   
-   {
-    "id" : 4,
-	"lastname" : "Martin 35555",
-	"firstname" : "Jean 33"
-   }
+  "contacts": [
+    {
+      "lastName": "dddd",
+      "firstName": "aav",
+      "address": "",
+      "city": "",
+      "zip": "",
+      "followed": false,
+      "id": 1
+    },
+    {
+      "lastName": "grr",
+      "firstName": "ar",
+      "address": "",
+      "city": "",
+      "zip": "",
+      "followed": false,
+      "id": 3
+    },
+    {
+      "lastName": "dsfsdfds",
+      "firstName": "sdfsdfsdf",
+      "address": "",
+      "city": "",
+      "zip": "",
+      "followed": false,
+      "id": 4
+    }
   ]
 }

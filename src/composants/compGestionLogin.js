@@ -63,7 +63,7 @@ class compGestionLogin extends Component {
                     {this.state.liste.map(item => <li key={item.id} onClick={() => this.deleteThisLogin(item.id)}>{item.userName}</li>)}
                 </ul>
                 <hr/>
-                <h3>Faire une recherche par id</h3>
+                <h3>Faire une recherche de login par id</h3>
                 <input type="text" required="required" ref={this.idLoginInput}/>
                 <button onClick={this.searchOneLogin}>Rechercher</button><br/>
                 {
