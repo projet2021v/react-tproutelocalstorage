@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import gestionlocalstorage from '../services/gestionslocalstorage';
 import CompFormContact from './compFormContacts';
-import CompAjoutRechercheSuppressionContact from './compARSContact';
+import CompAjoutRechercheSuppressionContact from './compAjoutRechercheSuppressionContact';
 
 
 class CompGestionContact extends Component {
