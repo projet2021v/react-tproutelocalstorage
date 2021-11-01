@@ -45,6 +45,7 @@ class CompAjoutRechercheSuppressionContact extends Component {
     }
 
     updateThisContact = (item) => {
+        console.log(item);
         this.props.updateThisContact(item);
     }
 

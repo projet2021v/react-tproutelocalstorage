@@ -53,7 +53,7 @@ const routes = [
       },
       {
         path: "/listes/gestionclient",
-        menu: 'Gestion des Cliens',
+        menu: 'Gestion des Clients',
         component: GestionCustomers
       }
     ]

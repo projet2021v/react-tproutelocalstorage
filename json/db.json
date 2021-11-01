@@ -155,41 +155,35 @@
       "userName": "vlb",
       "userMDP": "1234",
       "isAnonymous": false
-    },
-    {
-      "id": 4,
-      "userName": "super",
-      "userMDP": "1234",
-      "isAnonymous": false
     }
   ],
   "contacts": [
     {
-      "lastName": "dddd",
-      "firstName": "aav",
-      "address": "",
-      "city": "",
-      "zip": "",
+      "lastName": "LastName01",
+      "firstName": "FirstName01",
+      "address": "Address01",
+      "city": "Quimper",
+      "zip": "29000",
       "followed": false,
       "id": 1
     },
     {
-      "lastName": "grr",
-      "firstName": "ar",
-      "address": "",
-      "city": "",
-      "zip": "",
+      "lastName": "LastName02",
+      "firstName": "FirstName02",
+      "address": "Address02",
+      "city": "Rennes",
+      "zip": "35000",
       "followed": false,
-      "id": 3
+      "id": 2
     },
     {
-      "lastName": "dsfsdfds",
-      "firstName": "sdfsdfsdf",
-      "address": "",
-      "city": "",
-      "zip": "",
+      "lastName": "LastName03",
+      "firstName": "FirstName03",
+      "address": "Address03",
+      "city": "Nantes",
+      "zip": "44000",
       "followed": false,
-      "id": 4
+      "id": 3
     }
   ]
 }
